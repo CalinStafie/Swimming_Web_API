@@ -1,0 +1,16 @@
+<div class="page-title">
+    RECEPTIONISTS
+    <div class="page-subtitle">click on a card to make a purchase</div>
+  </div>
+  
+  <div class="receptionists-container">
+    <div class="receptionists-list">
+      <div *ngFor="let receptionist of receptionists">
+        <app-receptionist-info
+        [receptionist]="receptionist"
+        (onMakePurchaseReceptionist)="goToMakePurchase($event)"
+        ></app-receptionist-info>
+      </div>
+  </div>
+  
+  

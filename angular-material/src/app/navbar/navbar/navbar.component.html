@@ -1,0 +1,59 @@
+<mat-toolbar class="navbar" color="primary">
+  
+    <a routerLink="">
+      <span>
+        <button mat-button class="toolbar-button" color="secondary">
+            <mat-icon>pool</mat-icon>
+            SwimmingLife
+        </button>
+      </span>
+    </a>
+    <span class="example-spacer"></span>
+    <div class="navbar-link" *ngIf="authService.getRole() == 'Admin'">
+      <a routerLink="purchases">
+        <button mat-button class="toolbar-button">
+          DATABASE
+        </button>
+      </a>
+    </div>
+    <div class="navbar-link" *ngIf="authService.getRole() != 'Admin'">
+      <a routerLink="receptionists">
+        <button mat-button class="toolbar-button">
+          RECEPTIONISTS
+        </button>
+      </a>
+    </div>
+    <div class="navbar-link">
+      <a routerLink="subscriptions">
+        <button mat-button class="toolbar-button">
+          SUBSCRIPTIONS
+        </button>
+      </a>
+    </div>
+    <div class="navbar-link">
+      <a routerLink="dashboard">
+        <button mat-button class="toolbar-button">
+          ACCOUNT
+        </button>
+      </a>
+    </div>
+  
+    <div class="vl"></div>
+    <a href="https://www.linkedin.com/in/calin-stafie-371530223/" target="blank" mat-icon-button>
+   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 64 64" aria-labelledby="title"
+aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Linkedin</title>
+  <desc>A color styled icon from Orion Icon Library.</desc>
+  <path data-name="layer1"
+  fill="#0077b7" d="M1.15 21.7h13V61h-13zm46.55-1.3c-5.7 0-9.1 2.1-12.7 6.7v-5.4H22V61h13.1V39.7c0-4.5 2.3-8.9 7.5-8.9s8.3 4.4 8.3 8.8V61H64V38.7c0-15.5-10.5-18.3-16.3-18.3zM7.7 2.6C3.4 2.6 0 5.7 0 9.5s3.4 6.9 7.7 6.9 7.7-3.1 7.7-6.9S12 2.6 7.7 2.6z"></path>
+</svg>
+</a>
+
+    <button mat-icon-button class="toolbar-button menu-button" (click)="emitOnMenuClick()">
+      <mat-icon>
+        menu
+      </mat-icon>
+    </button>
+  
+  </mat-toolbar>
+  

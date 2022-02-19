@@ -1,0 +1,12 @@
+<div class="receptionist-card" (click)="selectReceptionist(receptionist)" [ngClass]="{'selected-receptionist-card': isSelected(receptionist)}">
+
+    <div class="container">
+      <h4><b>{{receptionist.lastName}} {{receptionist.firstName}}</b></h4>
+      <p>{{receptionist.jobDescription}}</p>
+
+      <div class="purchase-button">
+          <button mat-button mat-raised-button color="accent" (click)="requestConsultation(receptionist)">
+            MAKE A PURCHASE
+          </button>
+      </div>
+</div>

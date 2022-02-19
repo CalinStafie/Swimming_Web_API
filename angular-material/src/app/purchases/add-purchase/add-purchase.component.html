@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>Add a purchase</h2>
+
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+    <input matInput placeholder="Receptionist" formControlName="receptionist" [matAutocomplete]="receptionistAutocomplete" />
+    <mat-error *ngIf="form.controls['receptionist'].touched && form.controls['receptionist'].invalid">
+      Choose a value from the list!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-autocomplete autoActiveFirstOption #receptionistAutocomplete="matAutocomplete">
+    <mat-option *ngFor="let item of filteredReceptionists | async" [value]="'#' + item.id + ': ' + item.lastName + ' ' + item.firstName">
+      <div>{{'#' + item.id + ': ' + item.lastName + " " + item.firstName}}</div>
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-form-field>
+    <input matInput placeholder="Client" formControlName="client" [matAutocomplete]="clientAutocomplete" />
+    <mat-error *ngIf="form.controls['client'].touched && form.controls['client'].invalid">
+      Choose a value from the list!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-autocomplete autoActiveFirstOption #clientAutocomplete="matAutocomplete">
+    <mat-option *ngFor="let item of filteredClients | async" [value]="'#' + item.id + ': ' + item.lastName + ' ' + item.firstName">
+      <div>{{'#' + item.id + ': ' + item.lastName + " " + item.firstName}}</div>
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-form-field>
+    <input matInput placeholder="Subscription" formControlName="subscription" [matAutocomplete]="subscriptionAutocomplete" />
+    <mat-error *ngIf="form.controls['subscription'].touched && form.controls['subscription'].invalid">
+      Choose a value from the list!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-autocomplete autoActiveFirstOption #subscriptionAutocomplete="matAutocomplete">
+    <mat-option *ngFor="let item of filteredSubscriptions | async" [value]="'#' + item.id + ': ' + item.subscriptionName">
+      <div>{{'#' + item.id + ': ' + item.subscriptionName}}</div>
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-form-field>
+    <mat-label>Start Time</mat-label>
+    <input matInput type="date" formControlName="startTime">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>End Time</mat-label>
+    <input matInput type="date" formControlName="endTime">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+  <button [disabled]="form.invalid" class="mat-raised-button mat-primary" (click)="save()" [disabled]="form.invalid">Save</button>
+</mat-dialog-actions>

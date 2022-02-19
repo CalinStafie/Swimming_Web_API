@@ -1,0 +1,12 @@
+.receptionists-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px 50px;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}

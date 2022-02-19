@@ -1,0 +1,14 @@
+button {
+    left: 590px;
+}
+
+.tooltip {
+    display: inline-block;
+    border-bottom: 1px dotted black; 
+    position: absolute;
+    z-index: 2;
+  }
+
+.hover-class:hover {
+    background-color: blueviolet;
+  }

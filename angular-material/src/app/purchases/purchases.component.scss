@@ -1,0 +1,43 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .container {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+  }
+  
+  .button-container {
+    margin: auto;
+    width: 200px;
+    padding: 10px;
+  }
+  
+  .chip-list {
+    margin: 5px;
+  }
+  
+  .chip {
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+  
+  }
+  
+  .expired {
+    background-color: rgb(228, 227, 227);
+  }
+  

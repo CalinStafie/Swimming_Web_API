@@ -1,0 +1,90 @@
+<div class="page-title">Create a new account</div>
+
+<div class="login-form-container">
+    <form class="login-form" [formGroup]="loginForm" (submit)="submit()">
+
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your first name</mat-label>
+          <input matInput placeholder="First Name" formControlName="firstName">
+          <mat-error *ngIf="loginForm.controls['firstName'].touched && loginForm.controls['firstName'].invalid">
+            Enter your first name!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your last name</mat-label>
+          <input matInput placeholder="Last Name" formControlName="lastName">
+          <mat-error *ngIf="loginForm.controls['lastName'].touched && loginForm.controls['lastName'].invalid">
+            Enter your last name!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your phone number</mat-label>
+          <input matInput placeholder="07xx xxx xxx" formControlName="phoneNumber">
+          <mat-error *ngIf="loginForm.controls['phoneNumber'].touched && loginForm.controls['phoneNumber'].invalid">
+            Enter your phone number!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your date of birth</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="loginForm.controls['dateOfBirth'].touched && loginForm.controls['dateOfBirth'].invalid">
+            Enter your date of birth!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="name@domain.com" formControlName="email">
+          <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+            Enter a valid email!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+            Password is not strong enough!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm your password</mat-label>
+          <input matInput type="password" formControlName="confirmedPassword" >
+          <!-- [errorStateMatcher]="customErrorStateMatcher"> -->
+          <mat-error *ngIf="loginForm.controls['confirmedPassword'].touched && loginForm.hasError('notSame')">
+            Passwords don't match!
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="submit-container">
+        <button id="submit-button" type="submit" mat-button mat-raised-button color="accent" [disabled]="loginForm.invalid">
+          REGISTER
+        </button>
+      </div>
+    </form>
+
+    <div class="login-option" (click)="goToLoginPage()">
+        Already have an account? Login here.
+    </div>
+
+  </div>

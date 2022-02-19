@@ -1,0 +1,39 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+.navbar{
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+  box-shadow: 0 3px 5px -1px #0003,0 6px 10px #00000024,0 1px 18px #0000001f;
+}
+
+.vl {
+  margin: 5px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-radius: 1px;
+  height: 30px;
+}
+
+@media (min-width: 800px) {
+  .menu-button{
+    display: none;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .icons{
+    display: none;
+  }
+  .navbar-link{
+    display: none;
+  }
+  .vl{
+    display: none;
+  }
+}
