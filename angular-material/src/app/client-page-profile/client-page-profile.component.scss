@@ -1,0 +1,67 @@
+.page-content{
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+    .page-content{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .purchases{
+        flex-direction: column;
+        justify-content: center;
+
+    }
+  }
+
+.page-content > div {
+    margin: 5px;
+    padding: 5px;
+    /* border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
+}
+
+.account-information-container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-information{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 300px;
+    /* width: auto; */
+}
+
+.purchases-container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.purchases{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.purchases{
+    margin: 10px;
+    width: 300px;
+    align-content: center;
+}
+
+.mat-card{
+    background-color: inherit;
+}
+
+
